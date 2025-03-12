@@ -1,4 +1,6 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -25,6 +27,19 @@ module.exports = {
   //    好处是提升效率、不生成实际文件可以避免产生大量无用文件。
   // 2. 支持热更新。和HMR的区别是，HMR可以做到不刷新页面就更新，但是webpack-dev-server不能。
   devServer: {
-    static: './'
-  }
+    static: {
+      directory: path.join(__dirname, './dist') // static配置项用于配置静态资源的路径
+    }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'My App', // 自定义标题
+      template: './index.html', // 可选：使用自定义模板
+      filename: 'index.html', // 输出的 HTML 文件名
+      minify: {
+        collapseWhitespace: true, // 压缩 HTML 文件，移除空白字符
+        removeComments: true // 移除注释
+      }
+    })
+  ]
 }
