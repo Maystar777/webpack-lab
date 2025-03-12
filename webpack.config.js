@@ -6,7 +6,10 @@ module.exports = {
   //默认值是当前工程目录，一般不需要配置。
   //设置 context 后，所有的模块路径将相对于 context 进行解析。因此需要修改HtmlWebpackPlugin的template路径。
   context: path.resolve(__dirname, 'src'),
-  entry: '/index.js',
+  entry: {
+    main: '/index.js',
+    another: '/another.js'
+  },
   output: {
     //关于path：
     // 1. 是目录，不是文件
@@ -15,7 +18,7 @@ module.exports = {
     // 4. path.resolve()：用于解析绝对路径，始终基于当前工作目录（__dirname可以省略）。
     // 5. path.join()：用于路径拼接，不关心最终是否是绝对路径。
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: '[name].js'
   },
   mode: 'development',
   //配置webpack-dev-server
