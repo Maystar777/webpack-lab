@@ -2,7 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  //context配置项用于配置entry的上下文，即entry的路径是相对于context的。
+  //默认值是当前工程目录，一般不需要配置。
+  //设置 context 后，所有的模块路径将相对于 context 进行解析。因此需要修改HtmlWebpackPlugin的template路径。
+  context: path.resolve(__dirname, 'src'),
+  entry: '/index.js',
   output: {
     //关于path：
     // 1. 是目录，不是文件
@@ -34,7 +38,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'My App', // 自定义标题
-      template: './index.html', // 可选：使用自定义模板
+      template: '../index.html', // 可选：使用自定义模板
       filename: 'index.html', // 输出的 HTML 文件名
       minify: {
         collapseWhitespace: true, // 压缩 HTML 文件，移除空白字符
