@@ -1,0 +1,19 @@
+{
+  "name": "webpack-lab",
+  "version": "1.0.0",
+  "description": "webpack从零搭建",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maystar777/webpack-lab.git"
+  },
+  "author": "huangyuhui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maystar777/webpack-lab/issues"
+  },
+  "homepage": "https://github.com/Maystar777/webpack-lab#readme"
+}
