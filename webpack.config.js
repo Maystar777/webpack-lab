@@ -48,5 +48,13 @@ module.exports = {
         removeComments: true // 移除注释
       }
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 }
