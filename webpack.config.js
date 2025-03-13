@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   //context配置项用于配置entry的上下文，即entry的路径是相对于context的。
@@ -47,13 +48,21 @@ module.exports = {
         collapseWhitespace: true, // 压缩 HTML 文件，移除空白字符
         removeComments: true // 移除注释
       }
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css', // 生产模式下的输出文件名
+      chunkFilename: '[id].[contenthash].css' // 非入口点（如异步加载的模块）的输出文件名
     })
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          MiniCssExtractPlugin.loader, // 在生产模式下使用 MiniCssExtractPlugin.loader
+          // 'style-loader', //在开发模式下使用 style-loader, 会将样式插入到页面的 <style> 标签中, 支持热更新，便于调试
+          'css-loader'
+        ]
       }
     ]
   }
