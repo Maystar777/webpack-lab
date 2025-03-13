@@ -59,9 +59,17 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader, // 在生产模式下使用 MiniCssExtractPlugin.loader
-          // 'style-loader', //在开发模式下使用 style-loader, 会将样式插入到页面的 <style> 标签中, 支持热更新，便于调试
+          // MiniCssExtractPlugin.loader, // 在生产模式下使用 MiniCssExtractPlugin.loader
+          'style-loader', //在开发模式下使用 style-loader, 会将样式插入到页面的 <style> 标签中, 支持热更新，便于调试
           'css-loader'
+        ]
+      },
+      {
+        rules: [
+          {
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader']
+          }
         ]
       }
     ]

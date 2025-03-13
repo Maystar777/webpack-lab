@@ -1,0 +1,9 @@
+// style.scss
+$primary-color: #09c;
+$font-color: #fff;
+body {
+  text-align: center;
+  padding: 100px;
+  color: $font-color;
+  background-color: $primary-color;
+}

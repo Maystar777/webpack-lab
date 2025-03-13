@@ -1,4 +1,5 @@
-import './style.css'
+// import './style.css'
+import './style.scss'
 import addContent from './add-content.js'
 document.write('My first Webpack app.<br />')
 addContent()
