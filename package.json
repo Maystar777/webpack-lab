@@ -4,8 +4,8 @@
   "description": "webpack从零搭建",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server",
+    "build": "webpack --config ./config/webpack.prod.js",
+    "dev": "webpack serve --config ./config/webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
