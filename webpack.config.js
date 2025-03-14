@@ -2,6 +2,8 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
 
 module.exports = {
   //context配置项用于配置entry的上下文，即entry的路径是相对于context的。
@@ -54,7 +56,10 @@ module.exports = {
       filename: '[name].[contenthash].css', // 生产模式下的输出文件名
       chunkFilename: '[id].[contenthash].css' // 非入口点（如异步加载的模块）的输出文件名
     }),
-    new CleanWebpackPlugin() // 默认清理输出目录
+    new CleanWebpackPlugin(), // 默认清理输出目录
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false // 是否自动打开报告
+    }) // 打包分析
   ],
   module: {
     rules: [
