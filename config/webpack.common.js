@@ -45,9 +45,16 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: [
+          // {
+          //   loader: 'thread-loader',
+          //   options: {
+          //     workers: 2 // 设置线程数，可以根据 CPU 核心数进行调整
+          //     // 其他可选配置，如 workerParallelJobs、workerNodeArgs 等
+          //   }
+          // },
+          'babel-loader'
+        ]
       }
     ]
   },
