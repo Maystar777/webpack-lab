@@ -1,1 +1,1 @@
-document.write('another entry.<br />')
+console.log('another entry.<br />')

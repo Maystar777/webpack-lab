@@ -1,3 +1,3 @@
 export default function() {
-  document.write('Hello world!');
+  return 'add-content!'
 }

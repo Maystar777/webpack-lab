@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ],
+    "@babel/preset-react" // 这个开启之后，才能在.js文件中写jsx
+  ],
+  "comments": false
+  // "cacheDirectory": true // 好像不支持了？
+}
