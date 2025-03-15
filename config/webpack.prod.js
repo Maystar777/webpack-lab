@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-let x = merge(common, {
+const mergeConfig = merge(common, {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js'
@@ -39,5 +39,5 @@ let x = merge(common, {
     ]
   }
 })
-console.log(x)
-module.exports = x
+
+module.exports = mergeConfig

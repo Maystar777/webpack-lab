@@ -1,5 +1,5 @@
 import React from 'react'
-import Bar from './bar.jsx'
+import Bar from './Bar.jsx'
 
 const Foo = () => (
   <div>

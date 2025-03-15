@@ -22,7 +22,7 @@ module.exports = {
     // 4. path.resolve()：用于解析绝对路径，始终基于当前工作目录（__dirname可以省略）。
     // 5. path.join()：用于路径拼接，不关心最终是否是绝对路径。
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].js',
+    filename: '[name].[chunkhash].js', // 不加hash则在开发模式下会被缓存，导致live reload失效
     clean: true // 清理输出目录
   },
 

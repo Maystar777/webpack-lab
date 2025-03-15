@@ -14,7 +14,7 @@ import App from './App.jsx'
 
 //---- React19的写法----
 // 清除现有的 HTML 内容
-document.body.innerHTML = '<div id="root"></div>';
+document.body.innerHTML = '<div id="root"></div>'
 // 创建一个根容器
 const root = createRoot(document.getElementById('root'))
 // 使用根容器的 render 方法来渲染React元素
