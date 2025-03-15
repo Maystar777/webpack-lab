@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "modules": false
+        "modules": false // 禁用模块解析，因为babel自带的解析会转成CommonJS，那么无法做静态分析也就无法tree-shaking
       }
     ],
     "@babel/preset-react" // 这个开启之后，才能在.js文件中写jsx
